@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Diagnostics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,6 +34,9 @@ namespace RyansTemplate
             var reader = new StreamReader(@in);
             var writer = new StreamWriter(@out);
 
+            var input = reader.ReadLine();
+            if (input != null) Debug.WriteLine($"Got {input} as input string.");
+
             // Insert solution here.
             var answer = String.Empty;
 
@@ -40,6 +44,7 @@ namespace RyansTemplate
             {
                 writer.WriteLine(answer);
             }
+            else Debug.WriteLine("Invalid answer data.");
             writer.Flush();
 
             return 0;
